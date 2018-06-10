@@ -1,0 +1,38 @@
+﻿@model Request
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h2>View request details</h2>
+
+<ul>
+    <li>
+        @Html.LabelFor(e => Model.RequestId)
+        @Html.DisplayFor(e => Model.RequestId)
+    </li>
+    <li>
+        @Html.LabelFor(e => Model.Requestor)
+        @Html.DisplayFor(e => Model.Requestor)
+    </li>
+    <li>
+        @Html.LabelFor(e => Model.Date)
+        @Html.DisplayFor(e => Model.Date)
+    </li>
+    <li>
+        @Html.LabelFor(e => Model.MotivationRequestor)
+        @Html.DisplayFor(e => Model.MotivationRequestor)
+    </li>
+    <li>
+        @Html.LabelFor(e => Model.Status)
+        @Html.DisplayFor(e => Model.Status)
+    </li>
+    <li>
+        @Html.LabelFor(e => Model.Manager)
+        @Html.DisplayFor(e => Model.Manager)
+    </li>
+    <li>
+        @Html.LabelFor(e => Model.MotivationManager)
+        @Html.DisplayFor(e => Model.MotivationManager)
+    </li>
+</ul>

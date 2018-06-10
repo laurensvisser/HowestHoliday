@@ -1,0 +1,45 @@
+﻿@model Request
+
+@{
+    ViewData["Title"] = "Manage";
+}
+
+<h2>Manage holiday request</h2>
+
+<p>Access for managers only!</p>
+
+<form asp-action="Manage">
+    <ul>
+        <li>
+            @Html.LabelFor(e => Model.RequestId)
+            @Html.TextBoxFor(e => Model.RequestId, new { @readonly = true })
+        </li>
+        <li>
+            @Html.LabelFor(e => Model.Requestor)
+            @Html.TextBoxFor(e => Model.Requestor, new { @readonly = true })
+        </li>
+        <li>
+            @Html.LabelFor(e => Model.Date)
+            @Html.TextBoxFor(e => Model.Date, new { @readonly = true })
+        </li>
+        <li>
+            @Html.LabelFor(e => Model.MotivationRequestor)
+            @Html.TextBoxFor(e => Model.MotivationRequestor, new { @readonly = true })
+        </li>
+        <li>
+            @Html.LabelFor(e => Model.Status)
+            @Html.DropDownList("Status",
+                 new SelectList(Enum.GetValues(typeof(StatusCode))))
+        </li>
+        <li>
+            @Html.LabelFor(e => Model.Manager)
+            @Html.DisplayFor(e => Model.Manager)
+        </li>
+        <li>
+            @Html.LabelFor(e => Model.MotivationManager)
+            @Html.TextBoxFor(e => Model.MotivationManager)
+        </li>
+    </ul>
+
+    <input type="submit" class="btn btn-primary" value="Submit change" />
+</form>

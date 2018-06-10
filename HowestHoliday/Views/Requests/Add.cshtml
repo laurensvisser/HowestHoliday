@@ -1,0 +1,17 @@
+﻿@model Request
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add a request</h2>
+
+<form asp-action="Add">
+    @Html.LabelFor(e => e.Date)
+    @Html.TextBoxFor(e => e.Date, new { @class = "form-control" })
+    
+    @Html.LabelFor(e => e.MotivationRequestor)
+    @Html.TextBoxFor(e => e.MotivationRequestor, new { @class = "form-control" })
+
+    <input type="submit" class="btn btn-primary" value="Submit request" />
+</form>
